@@ -1,25 +1,25 @@
 <!DOCTYPE html>
- 
+
 <head>
     <meta charset="UTF-8">
- 
+
     <title>8 ataza</title>
 </head>
- 
+
 <body>
     <?php
     require_once("db.php");
     ?>
     <form action="main.php" method="GET">
-        <button>Eguneratu</button>
+        <button class="eguneratu">Eguneratu</button>
     </form>
- 
+
     <?php
- 
- 
-    $kontsulta = "SELECT * FROM 8ataza";
+
+
+    $kontsulta = "SELECT * FROM motogp_posiciones";
     $result = konexioaSortu()->query($kontsulta);
- 
+
     echo "<br>";
     if ($result->num_rows > 0) {
         echo "<table border='2px' style='border-collapse: collapse; width: 50%; text-align: center;'>";
@@ -32,23 +32,18 @@
             echo "</tr>";
         }
     }
+    require_once ("ajax.php")
     ?>
- 
-    <script>
-        $(document).ready(function () {
-           
-            setInterval(taulaBirkargatu, 60000);
- 
-        });
-        function taulaBirkargatu() {
- 
-            $.ajax({
-                "url": "ajax.php",
-                "method": "GET",
-                "data": {
-                    "akzioa": "lortuIkasleak",
-                }
-            })
-        }
+
    
- 
+    
+
+
+
+
+
+    
+
+</body >
+
+</html >
